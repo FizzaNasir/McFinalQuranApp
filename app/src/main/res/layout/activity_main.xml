@@ -4,15 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bgimgblur"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <Button
+        android:id="@+id/showpara"
+        android:layout_width="323dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="156dp"
+        android:background="#70FF0000"
+        android:backgroundTint="#C9FFFFFF"
+        android:text="View By Para"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/showsurah"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.495"
+        app:strokeColor="#F2FFFFFF"
+        app:strokeWidth="5dp" />
+
+    <Button
+        android:id="@+id/showsurah"
+        android:layout_width="333dp"
+        android:layout_height="91dp"
+        android:layout_marginBottom="272dp"
+        android:background="#70FF0000"
+        android:backgroundTint="#C0CA33"
+        android:backgroundTintMode="multiply"
+        android:text="View By Surah"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:strokeColor="#E6FFFFFF" />
 </androidx.constraintlayout.widget.ConstraintLayout>
