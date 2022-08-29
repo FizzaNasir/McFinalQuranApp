@@ -1,18 +1,27 @@
 public class AyahDetails {
 
-    int AyahId;
     int Ayahno;
     int SurahId;
+    int paraId;
     String arabic;
     String Urdu;
     String Eng;
 
-    public int getAyahId() {
-        return AyahId;
+    public AyahDetails(int ayahno, int surahId, int paraId, String arabic, String urdu, String eng) {
+        Ayahno = ayahno;
+        SurahId = surahId;
+        this.paraId = paraId;
+        this.arabic = arabic;
+        Urdu = urdu;
+        Eng = eng;
     }
 
-    public void setAyahId(int ayahId) {
-        AyahId = ayahId;
+    public int getParaId() {
+        return paraId;
+    }
+
+    public void setParaId(int paraId) {
+        this.paraId = paraId;
     }
 
     public int getAyahno() {
