@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/fizza nasir/AndroidStudioProjects/McfinalProject/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/fizza nasir/AndroidStudioProjects/McfinalProject/app/src/main/res/layout/activity_surah_content.xml" value="0.1" />
         <entry key="..\:/Users/fizza nasir/AndroidStudioProjects/McfinalProject/app/src/main/res/layout/activity_surah_list.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/fizza nasir/AndroidStudioProjects/McfinalProject/app/src/main/res/layout/activity_surah_list2.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/fizza nasir/AndroidStudioProjects/McfinalProject/app/src/main/res/layout/surahlayout.xml" value="0.1693840579710145" />
         <entry key="..\:/Users/fizza nasir/AndroidStudioProjects/McfinalProject/app/src/main/res/menu/menu.xml" value="0.203125" />
       </map>
     </option>

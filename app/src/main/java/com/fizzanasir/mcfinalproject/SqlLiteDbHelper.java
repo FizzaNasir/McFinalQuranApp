@@ -1,8 +1,12 @@
+package com.fizzanasir.mcfinalproject;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.fizzanasir.mcfinalproject.SurahList;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -10,7 +14,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
-
 
 public class SqlLiteDbHelper extends SQLiteOpenHelper {
 
@@ -22,13 +25,31 @@ public class SqlLiteDbHelper extends SQLiteOpenHelper {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
             ctx = context;
         }
-        public ArrayList<AyahDetails> getDetails() {
+
+        public ArrayList<AyahDetails> getDetailsBySurah(int sid){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<AyahDetails> contList = new ArrayList<>();
+        Cursor cursor = db.rawQuery("SELECT * FROM tayah WHERE SuraID="+sid, null);
+        if (cursor.moveToFirst()) {
+            while (cursor.moveToNext()) {
+                AyahDetails cont = new AyahDetails(cursor.getInt(1),cursor.getInt(2), cursor.getInt(10), cursor.getString(3), cursor.getString(5), cursor.getString(6));
+                contList.add(cont);
+            }
+            cursor.close();
+            db.close();
+        }
+        return contList;
+      }
+
+    public ArrayList<String> getDetails() {
             SQLiteDatabase db = this.getReadableDatabase();
-            ArrayList<AyahDetails> contList = new ArrayList<>();
-            Cursor cursor = db.rawQuery("SELECT * FROM tayah", null);
+//            ArrayList<AyahDetails> contList = new ArrayList<>();
+        ArrayList<String> contList = new ArrayList<>();
+            Cursor cursor = db.rawQuery("SELECT ArabicText  "+" FROM tayah", null);
             if (cursor != null) {
                 while (cursor.moveToNext()) {
-                    AyahDetails cont = new AyahDetails(cursor.getInt(1),cursor.getInt(2), cursor.getInt(10), cursor.getString(3), cursor.getString(5), cursor.getString(6));
+//                    AyahDetails cont = new AyahDetails(cursor.getInt(1),cursor.getInt(2), cursor.getInt(10), cursor.getString(3), cursor.getString(5), cursor.getString(6));
+                    String cont = cursor.getString(0);
                     contList.add(cont);
                 }
                 cursor.close();
