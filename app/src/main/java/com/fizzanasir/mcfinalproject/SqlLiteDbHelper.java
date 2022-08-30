@@ -26,6 +26,21 @@ public class SqlLiteDbHelper extends SQLiteOpenHelper {
             ctx = context;
         }
 
+    public ArrayList<AyahDetails> getDetailsByPara(int sid){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<AyahDetails> contList = new ArrayList<>();
+        Cursor cursor = db.rawQuery("SELECT * FROM tayah WHERE ParaID="+sid, null);
+        if (cursor.moveToFirst()) {
+            while (cursor.moveToNext()) {
+                AyahDetails cont = new AyahDetails(cursor.getInt(1),cursor.getInt(2), cursor.getInt(10), cursor.getString(3), cursor.getString(5), cursor.getString(6));
+                contList.add(cont);
+            }
+            cursor.close();
+            db.close();
+        }
+        return contList;
+    }
+
         public ArrayList<AyahDetails> getDetailsBySurah(int sid){
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<AyahDetails> contList = new ArrayList<>();
