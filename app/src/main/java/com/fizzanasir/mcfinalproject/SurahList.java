@@ -17,11 +17,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.material.navigation.NavigationView;
+
 import java.util.ArrayList;
 
 public class SurahList extends AppCompatActivity {
     ArrayList<String> surahnames = new ArrayList<String>();
     ListView listview;
+    NavigationView navigationView;
     public String[] englishSurahNames = {"Al-Fatihah",
             "Al-Baqara ",
             "Al-i'Imran ",
@@ -146,6 +149,7 @@ public class SurahList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_surah_list2);
         drawerLayout = findViewById(R.id.my_drawer_layout);
+        navigationView=findViewById(R.id.navview);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
 
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
@@ -182,8 +186,25 @@ public class SurahList extends AppCompatActivity {
             }
         });
 
-    }
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
+            {
+                switch (menuItem.getItemId())
+                {
+                    case R.id.SearchSP:
+                        Toast.makeText(getApplicationContext(),"Retur is Clicked",Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(SurahList.this, Search.class);
+                        startActivity(intent);
+                        //drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                }
+
+                return true;
+            }
+        });
+}
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
@@ -191,5 +212,6 @@ public class SurahList extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 
 }

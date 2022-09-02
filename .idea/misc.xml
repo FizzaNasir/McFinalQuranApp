@@ -3,14 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/fizza nasir/AndroidStudioProjects/McfinalProject/app/src/main/res/layout/activity_display_para_search.xml" value="0.1897644927536232" />
+        <entry key="..\:/Users/fizza nasir/AndroidStudioProjects/McfinalProject/app/src/main/res/layout/activity_display_surah_search.xml" value="0.14166666666666666" />
         <entry key="..\:/Users/fizza nasir/AndroidStudioProjects/McfinalProject/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/fizza nasir/AndroidStudioProjects/McfinalProject/app/src/main/res/layout/activity_para_content.xml" value="0.1897644927536232" />
         <entry key="..\:/Users/fizza nasir/AndroidStudioProjects/McfinalProject/app/src/main/res/layout/activity_parah_list.xml" value="0.17980072463768115" />
+        <entry key="..\:/Users/fizza nasir/AndroidStudioProjects/McfinalProject/app/src/main/res/layout/activity_search.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/fizza nasir/AndroidStudioProjects/McfinalProject/app/src/main/res/layout/activity_surah_content.xml" value="0.1" />
         <entry key="..\:/Users/fizza nasir/AndroidStudioProjects/McfinalProject/app/src/main/res/layout/activity_surah_list.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/fizza nasir/AndroidStudioProjects/McfinalProject/app/src/main/res/layout/activity_surah_list2.xml" value="0.1693840579710145" />
         <entry key="..\:/Users/fizza nasir/AndroidStudioProjects/McfinalProject/app/src/main/res/layout/surahlayout.xml" value="0.1693840579710145" />
         <entry key="..\:/Users/fizza nasir/AndroidStudioProjects/McfinalProject/app/src/main/res/menu/menu.xml" value="0.203125" />
+        <entry key="..\:/Users/fizza nasir/AndroidStudioProjects/McfinalProject/app/src/main/res/menu/navigation_menu.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

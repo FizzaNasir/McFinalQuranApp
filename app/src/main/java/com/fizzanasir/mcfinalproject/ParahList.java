@@ -17,10 +17,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.material.navigation.NavigationView;
+
 import java.util.ArrayList;
 
 public class ParahList extends AppCompatActivity {
-
+    NavigationView navigationView;
     ArrayList<String> paranames = new ArrayList<String>();
     ListView listview;
     public DrawerLayout drawerLayout;
@@ -30,6 +32,7 @@ public class ParahList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parah_list);
         drawerLayout = findViewById(R.id.my_drawer_layout1);
+        navigationView=findViewById(R.id.navviewpara);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
 
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
@@ -62,6 +65,25 @@ public class ParahList extends AppCompatActivity {
                 intent.putExtra("Parah_number", s);
                 startActivity(intent);
                 Toast.makeText(ParahList.this, "I clicked: ", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
+            {
+                switch (menuItem.getItemId())
+                {
+                    case R.id.SearchSP:
+                        Toast.makeText(getApplicationContext(),"Retur is Clicked",Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(ParahList.this, Search.class);
+                        startActivity(intent);
+                        //drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                }
+
+                return true;
             }
         });
     }

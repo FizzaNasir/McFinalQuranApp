@@ -14,6 +14,15 @@
         android:theme="@style/Theme.McfinalProject"
         tools:targetApi="31">
         <activity
+            android:name=".DisplayParaSearch"
+            android:exported="false" />
+        <activity
+            android:name=".DisplaySurahSearch"
+            android:exported="false" />
+        <activity
+            android:name=".Search"
+            android:exported="false" />
+        <activity
             android:name=".ParaContent"
             android:exported="false" />
         <activity

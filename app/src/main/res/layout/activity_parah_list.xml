@@ -8,14 +8,18 @@ android:layout_height="match_parent"
 tools:context=".ParahList"
 tools:ignore="HardcodedText">
 
-<ListView
+    <ListView
     android:id="@+id/ParaList"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
-<com.google.android.material.navigation.NavigationView
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:layout_gravity="start"
-    app:menu="@menu/navigation_menu" />
+    android:layout_height="match_parent" >
+
+    </ListView>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navviewpara"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/navigation_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -8,8 +8,8 @@
         android:title="Book Marks" />
 
     <item
-        android:id="@+id/lastread"
-        android:title="Last read" />
+        android:id="@+id/SearchSP"
+        android:title="Search" />
 
     <item
         android:id="@+id/nav_logout"
