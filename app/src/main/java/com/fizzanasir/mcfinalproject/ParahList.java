@@ -41,12 +41,15 @@ public class ParahList extends AppCompatActivity {
         for (int i = 1; i <= 30; i++) {
             paranames.add("Para" + i);
         }
-
+       Intent intent=getIntent();
+        String urduTrans=intent.getStringExtra("urdutrans");
+        String engTrans=intent.getStringExtra("engtrans");
+//        Toast.makeText(this, urduTrans+engTrans, Toast.LENGTH_SHORT).show();
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, paranames) {
             public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
                 if (position % 2 == 1) {
-//                    view.setBackgroundColor(getResources().getColor(android.R.color.system_accent1_400));
+                    view.setBackgroundColor(getResources().getColor(android.R.color.system_accent1_400));
                     view.setBackgroundColor(Color.rgb(248, 252, 240));
                 } else {
                     view.setBackgroundColor(Color.rgb(251, 252, 245));
@@ -63,6 +66,8 @@ public class ParahList extends AppCompatActivity {
                 String s = String.valueOf(adapterView.getItemIdAtPosition(position));
 
                 intent.putExtra("Parah_number", s);
+//                intent.putExtra("seturdutrans", urduTrans);
+//                intent.putExtra("setengtrans", engTrans);
                 startActivity(intent);
                 Toast.makeText(ParahList.this, "I clicked: ", Toast.LENGTH_SHORT).show();
             }
@@ -76,9 +81,14 @@ public class ParahList extends AppCompatActivity {
                 switch (menuItem.getItemId())
                 {
                     case R.id.SearchSP:
-                        Toast.makeText(getApplicationContext(),"Retur is Clicked",Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(ParahList.this, Search.class);
                         startActivity(intent);
+                        //drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+
+                    case R.id.settings:
+                        Intent intent1 = new Intent(ParahList.this, Settings.class);
+                        startActivity(intent1);
                         //drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                 }

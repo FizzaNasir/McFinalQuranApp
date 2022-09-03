@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Settings">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="302dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="60dp"
+        android:text="Set Urdu translation"
+        android:textColor="#040404"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="306dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="48dp"
+        android:text="Set English translation"
+        android:textColor="#040404"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/urduTransGrp" />
+
+    <RadioGroup
+        android:id="@+id/urduTransGrp"
+        android:layout_width="298dp"
+        android:layout_height="184dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <RadioButton
+            android:id="@+id/jalandhri"
+            android:layout_width="match_parent"
+            android:layout_height="91dp"
+            android:text="Fateh Muhammad Jalandhri"
+            android:textColor="#887B7B"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/Hassan"
+            android:layout_width="match_parent"
+            android:layout_height="95dp"
+            android:text="Mehmood ul Hassan"
+            android:textColor="#FF887B7B"
+            android:textSize="20sp" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/EngTransGrp"
+        android:layout_width="307dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <RadioButton
+            android:id="@+id/Mohsin"
+            android:layout_width="match_parent"
+            android:layout_height="86dp"
+            android:text="Dr Mohsin Khan"
+            android:textColor="#887B7B"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/TaqiUsmani"
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:text="Mufti Taqi Usmani"
+            android:textColor="#887B7B"
+            android:textColorLink="#887B7B"
+            android:textSize="20sp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/apply"
+        android:layout_width="222dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="16dp"
+        android:text="Apply Changes"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

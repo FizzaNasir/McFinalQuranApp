@@ -25,6 +25,50 @@ public class SqlLiteDbHelper extends SQLiteOpenHelper {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
             ctx = context;
         }
+    public ArrayList<AyahDetails> getParaDetailsByEngUrdutrans(int Uloc, int Eloc, int pid){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<AyahDetails> contList = new ArrayList<>();
+        Cursor cursor = db.rawQuery("SELECT * FROM tayah WHERE ParaID="+pid, null);
+        if (cursor.moveToFirst()) {
+            while (cursor.moveToNext()) {
+                AyahDetails cont = new AyahDetails(cursor.getInt(1),cursor.getInt(2), cursor.getInt(10), cursor.getString(3), cursor.getString(Uloc), cursor.getString(Eloc));
+                contList.add(cont);
+            }
+            cursor.close();
+            db.close();
+        }
+        return contList;
+    }
+
+    public ArrayList<AyahDetails> getParaDetailsByEngtrans( int Eloc, int pid){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<AyahDetails> contList = new ArrayList<>();
+        Cursor cursor = db.rawQuery("SELECT * FROM tayah WHERE ParaID="+pid, null);
+        if (cursor.moveToFirst()) {
+            while (cursor.moveToNext()) {
+                AyahDetails cont = new AyahDetails(cursor.getInt(1),cursor.getInt(2), cursor.getInt(10), cursor.getString(3), cursor.getString(4), cursor.getString(Eloc));
+                contList.add(cont);
+            }
+            cursor.close();
+            db.close();
+        }
+        return contList;
+    }
+
+    public ArrayList<AyahDetails> getParaDetailsByUrdutrans( int Uloc, int pid){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<AyahDetails> contList = new ArrayList<>();
+        Cursor cursor = db.rawQuery("SELECT * FROM tayah WHERE ParaID="+pid, null);
+        if (cursor.moveToFirst()) {
+            while (cursor.moveToNext()) {
+                AyahDetails cont = new AyahDetails(cursor.getInt(1),cursor.getInt(2), cursor.getInt(10), cursor.getString(3), cursor.getString(Uloc), cursor.getString(6));
+                contList.add(cont);
+            }
+            cursor.close();
+            db.close();
+        }
+        return contList;
+    }
 
     public ArrayList<AyahDetails> getDetailsByPara(int sid){
         SQLiteDatabase db = this.getReadableDatabase();
@@ -32,7 +76,7 @@ public class SqlLiteDbHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("SELECT * FROM tayah WHERE ParaID="+sid, null);
         if (cursor.moveToFirst()) {
             while (cursor.moveToNext()) {
-                AyahDetails cont = new AyahDetails(cursor.getInt(1),cursor.getInt(2), cursor.getInt(10), cursor.getString(3), cursor.getString(5), cursor.getString(6));
+                AyahDetails cont = new AyahDetails(cursor.getInt(1),cursor.getInt(2), cursor.getInt(10), cursor.getString(3), cursor.getString(4), cursor.getString(6));
                 contList.add(cont);
             }
             cursor.close();
@@ -47,7 +91,7 @@ public class SqlLiteDbHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("SELECT * FROM tayah WHERE SuraID="+sid, null);
         if (cursor.moveToFirst()) {
             while (cursor.moveToNext()) {
-                AyahDetails cont = new AyahDetails(cursor.getInt(1),cursor.getInt(2), cursor.getInt(10), cursor.getString(3), cursor.getString(5), cursor.getString(6));
+                AyahDetails cont = new AyahDetails(cursor.getInt(1),cursor.getInt(2), cursor.getInt(10), cursor.getString(3), cursor.getString(4), cursor.getString(6));
                 contList.add(cont);
             }
             cursor.close();
@@ -55,6 +99,50 @@ public class SqlLiteDbHelper extends SQLiteOpenHelper {
         }
         return contList;
       }
+    public ArrayList<String> getParaDetailsOnlyArabic(int pid){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<String> contList = new ArrayList<>();
+        Cursor cursor = db.rawQuery("SELECT * FROM tayah WHERE ParaID="+pid, null);
+        if (cursor.moveToFirst()) {
+            while (cursor.moveToNext()) {
+                String cont =  cursor.getString(3);
+                contList.add(cont);
+            }
+            cursor.close();
+            db.close();
+        }
+        return contList;
+    }
+    public ArrayList<String> getParaDetailsOnlyUrdutrans( int Uloc, int pid){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<String> contList = new ArrayList<>();
+        Cursor cursor = db.rawQuery("SELECT * FROM tayah WHERE ParaID="+pid, null);
+        if (cursor.moveToFirst()) {
+            while (cursor.moveToNext()) {
+                String cont =  cursor.getString(Uloc);
+                contList.add(cont);
+            }
+            cursor.close();
+            db.close();
+        }
+        return contList;
+    }
+
+    public ArrayList<String> getParaDetailsOnlyEngtrans( int Eloc, int pid){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<String> contList = new ArrayList<>();
+        Cursor cursor = db.rawQuery("SELECT * FROM tayah WHERE ParaID="+pid, null);
+        if (cursor.moveToFirst()) {
+            while (cursor.moveToNext()) {
+                String cont =  cursor.getString(Eloc);
+                contList.add(cont);
+            }
+            cursor.close();
+            db.close();
+        }
+        return contList;
+    }
+
 
     public ArrayList<String> getDetails() {
             SQLiteDatabase db = this.getReadableDatabase();

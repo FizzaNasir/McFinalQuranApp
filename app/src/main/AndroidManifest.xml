@@ -14,6 +14,9 @@
         android:theme="@style/Theme.McfinalProject"
         tools:targetApi="31">
         <activity
+            android:name=".Settings"
+            android:exported="false" />
+        <activity
             android:name=".DisplayParaSearch"
             android:exported="false" />
         <activity
