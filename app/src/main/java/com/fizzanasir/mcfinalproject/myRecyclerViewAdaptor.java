@@ -22,12 +22,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 class myRecyclerViewAdapter extends RecyclerView.Adapter<myRecyclerViewAdapter.MyVH> {
-
+    private SelectedItem listner;
     //List<Friend> friendsList;
     ArrayList<AyahDetails> ayahdetails;
     public myRecyclerViewAdapter(ArrayList<AyahDetails> ayahdetails) {
         this.ayahdetails = ayahdetails;
     }
+
 
     @NonNull
     @Override

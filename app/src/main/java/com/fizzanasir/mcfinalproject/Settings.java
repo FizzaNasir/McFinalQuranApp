@@ -95,9 +95,7 @@ public class Settings extends AppCompatActivity {
                 Toast.makeText(Settings.this, "Changes applied successfully!", Toast.LENGTH_SHORT).show();
                 Global.urdutrans=urdutext;
                 Global.engtrans=engtext;
-                Intent intent = new Intent(Settings.this, ParahList.class);
-//                intent.putExtra("urdutrans",urdutext);
-//                intent.putExtra("engtrans", engtext);
+                Intent intent = new Intent(Settings.this, SurahList.class);
                 startActivity(intent);
 
             }

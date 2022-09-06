@@ -194,9 +194,15 @@ public class SurahList extends AppCompatActivity {
                 switch (menuItem.getItemId())
                 {
                     case R.id.SearchSP:
-                        Toast.makeText(getApplicationContext(),"Retur is Clicked",Toast.LENGTH_LONG).show();
+//                        Toast.makeText(getApplicationContext(),"Retur is Clicked",Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(SurahList.this, Search.class);
                         startActivity(intent);
+                        //drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+
+                    case R.id.settings:
+                        Intent intent1 = new Intent(SurahList.this, Settings.class);
+                        startActivity(intent1);
                         //drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                 }
